@@ -7,6 +7,11 @@ $ cd components
 $ ls -la
 ```
 
+## 各inputコンポーネントのユニットテスト
+```shell
+$ yarn test:unit
+```
+
 ## Project setup
 ```
 yarn install
