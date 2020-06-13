@@ -51,6 +51,13 @@
           :options="INPUT_RADIO_OPTION_DEFAULT"
         />
       </div>
+      <h2>loginform by v-bind:sync</h2>
+      <div>
+        <InputTexts
+          :email.sync="formData.login.email"
+          :password.sync="formData.login.password"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -62,6 +69,7 @@ import InputSelect from "./components/InputSelect.vue";
 import InputCheckbox from "./components/InputCheckbox.vue";
 import InputRadio from "./components/InputRadio.vue";
 import InputRadioDeletable from "./components/InputRadioDeletable.vue";
+import InputTexts from "./components/v-bind-sync/InputTexts";
 import { INPUT_RADIO_OPTIONS, INPUT_SELECT_OPTIONS, INPUT_CHECKBOX_OPTIONS } from "./constants";
 
 export default {
@@ -71,7 +79,8 @@ export default {
     InputSelect,
     InputCheckbox,
     InputRadio,
-    InputRadioDeletable
+    InputRadioDeletable,
+    InputTexts
   },
   data() {
     return {
@@ -81,7 +90,11 @@ export default {
         radio: null,
         radioDeletable: null,
         select: 0,
-        checkbox: []
+        checkbox: [],
+        login: {
+          email: "",
+          password: ""
+        }
       }
     };
   },
